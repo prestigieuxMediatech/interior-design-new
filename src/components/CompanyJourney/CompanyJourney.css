@@ -1,0 +1,288 @@
+/* ==========================================================================
+   ROYAL JOURNEY & MILESTONES SECTION
+   ========================================================================== */
+
+.journey-section {
+  width: 100%;
+  background: #fdfbf7; /* Off-white warm royal background */
+  padding: 120px 0;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+
+.journey-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 4%;
+  position: relative;
+}
+
+/* --- SECTION HEADER --- */
+.journey-header {
+  text-align: center;
+  margin-bottom: 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.journey-badge {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: #b8860b; /* Elegant Metallic Gold */
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.journey-title {
+  font-family: 'Georgia', serif;
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  font-weight: 800;
+  color: #0b3432; /* Amar Interior Primary Emerald Green */
+  margin: 0;
+  line-height: 1.2;
+}
+
+.journey-title span {
+  color: #1a4d4a;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.journey-header-line {
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, #0b3432, #b8860b);
+  margin-top: 20px;
+  border-radius: 2px;
+  transform-origin: center;
+}
+
+/* --- GRID & CARD WRAPPERS --- */
+.journey-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  position: relative;
+  z-index: 2;
+}
+
+.journey-card-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Alternate Staggering for Premium Layout */
+.top-card {
+  margin-bottom: 70px;
+}
+
+.bottom-card {
+  margin-top: 70px;
+  flex-direction: column-reverse;
+}
+
+/* --- CARD DESIGN --- */
+.journey-card {
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(11, 52, 50, 0.06);
+  border: 1px solid rgba(11, 52, 50, 0.08);
+  transition: all 0.4s ease;
+  width: 100%;
+}
+
+.journey-card-wrapper:hover .journey-card,
+.journey-card-wrapper.active-step .journey-card {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px rgba(11, 52, 50, 0.14);
+  border-color: rgba(184, 134, 11, 0.5);
+}
+
+.card-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 170px;
+  overflow: hidden;
+}
+
+.card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s ease;
+}
+
+.journey-card-wrapper:hover .card-img {
+  transform: scale(1.08);
+}
+
+.card-tag {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(11, 52, 50, 0.85);
+  backdrop-filter: blur(6px);
+  color: #d4af37;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  text-transform: uppercase;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-year {
+  font-family: 'Georgia', serif;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #b8860b;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.card-title {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #0b3432;
+  letter-spacing: 1px;
+  margin: 0 0 4px 0;
+}
+
+.card-subtitle {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #475569;
+  margin: 0 0 10px 0;
+}
+
+.card-desc {
+  font-size: 0.85rem;
+  color: #64748b;
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* --- TIMELINE NODES & CONNECTORS --- */
+.timeline-dot-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 3;
+}
+
+.top-card .timeline-dot-wrapper {
+  margin-top: 20px;
+}
+
+.bottom-card .timeline-dot-wrapper {
+  margin-bottom: 20px;
+}
+
+.timeline-line-connector {
+  width: 2px;
+  height: 25px;
+  background: linear-gradient(to bottom, rgba(11, 52, 50, 0.2), #b8860b);
+}
+
+.timeline-node {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 2px solid #0b3432;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.node-inner {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #0b3432;
+  transition: all 0.3s ease;
+}
+
+.journey-card-wrapper:hover .timeline-node,
+.journey-card-wrapper.active-step .timeline-node {
+  border-color: #b8860b;
+  transform: scale(1.25);
+  box-shadow: 0 0 15px rgba(184, 134, 11, 0.4);
+}
+
+.journey-card-wrapper:hover .node-inner,
+.journey-card-wrapper.active-step .node-inner {
+  background: #b8860b;
+}
+
+/* --- MAIN HORIZONTAL TRACK LINE --- */
+.timeline-track-bar {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  right: 5%;
+  height: 2px;
+  background: rgba(11, 52, 50, 0.12);
+  z-index: 1;
+  transform: translateY(-50%);
+}
+
+.timeline-track-fill {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #0b3432 0%, #b8860b 50%, #0b3432 100%);
+  transform-origin: left;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN (TABLETS & MOBILE)
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+  .journey-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+
+  .timeline-track-bar {
+    display: none; /* Hide horizontal bar on tablet vertical stack */
+  }
+
+  .top-card, .bottom-card {
+    margin: 0;
+    flex-direction: column;
+  }
+
+  .timeline-dot-wrapper {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .journey-section {
+    padding: 70px 0;
+  }
+
+  .journey-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .card-image-wrapper {
+    height: 190px;
+  }
+}

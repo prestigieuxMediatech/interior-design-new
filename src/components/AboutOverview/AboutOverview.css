@@ -1,0 +1,266 @@
+/* ==========================================================================
+   ABOUT OVERVIEW SECTION (FULL STYLES WITH ZERO FLASH IMAGE SLIDER)
+   ========================================================================== */
+
+.about-overview-section {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 110px 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.about-overview-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 5%;
+  box-sizing: border-box;
+}
+
+/* --- TOP GRID ROW --- */
+.overview-top-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 60px;
+  align-items: center;
+  margin-bottom: 75px;
+}
+
+/* --- MAGNETIC TITLE STYLING --- */
+.overview-left-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.magnetic-title-wrapper {
+  overflow: hidden;
+  padding: 10px 0;
+}
+
+.magnetic-title {
+  font-family: 'Georgia', serif;
+  font-size: clamp(3.5rem, 7vw, 6.2rem);
+  font-weight: 900;
+  color: #0b3432;
+  letter-spacing: 2px;
+  margin: 0;
+  line-height: 1;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.letter-char {
+  display: inline-block;
+  transform-origin: center;
+}
+
+.space-char {
+  display: inline-block;
+  width: 0.3em;
+}
+
+.title-divider-line {
+  width: 100%;
+  max-width: 520px;
+  height: 2px;
+  background-color: #e2e8f0;
+  margin: 25px 0 20px 0;
+}
+
+.overview-subtitle {
+  font-size: clamp(1.5rem, 2.8vw, 2.3rem);
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0;
+  letter-spacing: -0.5px;
+  line-height: 1.25;
+}
+
+/* --- STACKED CARDS SLIDER --- */
+.overview-right-slider {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.stacked-card-wrapper {
+  position: relative;
+  width: 410px;
+  height: 300px;
+}
+
+/* MAIN CARD CONTAINER & DARK FALLBACK */
+.main-image-card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+  overflow: hidden;
+  z-index: 3;
+  box-shadow: 0 22px 45px rgba(0, 0, 0, 0.18);
+  background-color: #0f172a; /* Dark base ensures white box NEVER shows */
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.slider-img,
+.stack-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* NO-FLASH DOUBLE LAYER IMAGE POSITIONING */
+.static-bg-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.absolute-top-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+/* STACKED BACKGROUND CARDS WITH REAL IMAGES */
+.bg-stack-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.stack-layer-1 {
+  z-index: 2;
+  transform: translate(-22px, -22px);
+  filter: brightness(0.85);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.stack-layer-2 {
+  z-index: 1;
+  transform: translate(-42px, -42px);
+  filter: brightness(0.72);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* SLIDER CONTROLS */
+.slider-controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.control-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #0f172a;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease;
+}
+
+.control-btn:hover {
+  color: #0b3432;
+  transform: scale(1.18);
+}
+
+/* --- DARK BOLD PARAGRAPHS & INCREASED FONT SIZE --- */
+.overview-bottom-content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 1180px;
+}
+
+.overview-p {
+  color: #0f172a;
+  font-size: 1.12rem;
+  line-height: 1.75;
+  margin: 0;
+  font-weight: 500;
+}
+
+.mission-block {
+  margin-top: 10px;
+}
+
+.mission-title {
+  color: #000000;
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin: 0 0 10px 0;
+  letter-spacing: -0.3px;
+}
+
+.mission-text {
+  color: #0f172a;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN (TABLETS & MOBILE)
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+  .overview-top-grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .overview-right-slider {
+    align-items: center;
+  }
+
+  .stacked-card-wrapper {
+    width: 360px;
+    height: 260px;
+  }
+
+  .stack-layer-1 {
+    transform: translate(-16px, -16px);
+  }
+
+  .stack-layer-2 {
+    transform: translate(-32px, -32px);
+  }
+}
+
+@media (max-width: 767px) {
+  .about-overview-section {
+    padding: 70px 0;
+  }
+
+  .stacked-card-wrapper {
+    width: 100%;
+    max-width: 310px;
+    height: 230px;
+  }
+
+  .stack-layer-1 {
+    transform: translate(-12px, -12px);
+  }
+
+  .stack-layer-2 {
+    transform: translate(-24px, -24px);
+  }
+
+  .overview-p {
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+}

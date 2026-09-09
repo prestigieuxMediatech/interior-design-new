@@ -1,0 +1,217 @@
+/* ==========================================================================
+   GET IN TOUCH FULL-WIDTH COMPACT PARALLAX SECTION
+   ========================================================================== */
+
+.get-in-touch-section {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 0px;
+  background: #ffffff;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Header Container for text alignment */
+.get-in-touch-header-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 5%;
+  box-sizing: border-box;
+}
+
+/* --- MAGNETIC TITLE STYLING --- */
+.touch-header-row {
+  margin-bottom: 30px;
+  width: 100%;
+  overflow: hidden; /* Prevents unwanted horizontal scrollbar */
+}
+
+.magnetic-touch-title {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.35em;
+  font-size: clamp(1.8rem, 7.5vw, 6.5rem);
+  font-weight: 900;
+  color: #0b3432;
+  line-height: 1;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  white-space: nowrap; /* Strictly keeps "GET IN TOUCH" in ONE line */
+}
+
+.touch-word-block {
+  display: inline-flex;
+  white-space: nowrap;
+}
+
+.touch-magnet-char {
+  display: inline-block;
+  will-change: transform, opacity, filter;
+}
+
+/* --- BALANCED FULL-WIDTH EDGE-TO-EDGE BANNER WRAPPER --- */
+.parallax-banner-wrapper {
+  position: relative;
+  width: 100vw;
+  max-width: 100%;
+  height: 390px; /* Balanced height: Not too tall, not too flat */
+  border-radius: 0px; /* Touch screen edges on left and right */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+/* Extended inner image container for smooth parallax scroll translation */
+.parallax-image-box {
+  position: absolute;
+  top: -20%;
+  left: 0;
+  width: 100%;
+  height: 140%;
+  z-index: 1;
+  will-change: transform;
+}
+
+.parallax-image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* OVERLAY & CONTENT */
+.banner-overlay-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    180deg, 
+    rgba(11, 52, 50, 0.45) 0%, 
+    rgba(11, 52, 50, 0.85) 100%
+  );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 30px 20px;
+  box-sizing: border-box;
+  gap: 18px;
+}
+
+.banner-heading {
+  color: #ffffff;
+  font-size: clamp(1.4rem, 3.5vw, 2.4rem);
+  font-weight: 700;
+  max-width: 850px;
+  margin: 0;
+  line-height: 1.25;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.banner-subheading {
+  color: #e2e8f0;
+  font-size: clamp(0.75rem, 1.4vw, 0.95rem);
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-top: -4px;
+}
+
+/* --- LET'S TALK BUTTON WITH #FFC107 HOVER ACCENT --- */
+.lets-talk-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 30px;
+  background-color: transparent;
+  color: #ffffff;
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-decoration: none;
+  border-radius: 50px;
+  border: 1.8px solid #ffffff;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.lets-talk-btn svg {
+  transition: transform 0.3s ease;
+}
+
+.lets-talk-btn:hover {
+  background-color: #FFC107; /* Requested Yellow Color */
+  color: #0b3432;
+  border-color: #FFC107;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(255, 193, 7, 0.35);
+}
+
+.lets-talk-btn:hover svg {
+  transform: translate(3px, -3px);
+}
+
+/* ==========================================================================
+   RESPONSIVE MEDIA QUERIES (Smartphones, Androids, Tablets, iPads)
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+  .parallax-banner-wrapper {
+    height: 340px;
+  }
+}
+
+@media (max-width: 767px) {
+  .get-in-touch-section {
+    padding-top: 35px;
+  }
+
+  .touch-header-row {
+    margin-bottom: 18px;
+  }
+
+  .magnetic-touch-title {
+    font-size: clamp(1.6rem, 7.8vw, 2.8rem);
+    letter-spacing: -0.5px;
+    gap: 0.25em;
+  }
+
+  .parallax-banner-wrapper {
+    height: 290px;
+  }
+
+  .banner-overlay-content {
+    padding: 20px 15px;
+    gap: 14px;
+  }
+
+  .lets-talk-btn {
+    padding: 10px 24px;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 430px) {
+  .magnetic-touch-title {
+    font-size: clamp(1.35rem, 7.2vw, 2.2rem);
+    gap: 0.2em;
+  }
+
+  .parallax-banner-wrapper {
+    height: 260px;
+  }
+
+  .banner-overlay-content {
+    gap: 12px;
+  }
+
+  .lets-talk-btn {
+    padding: 8px 20px;
+    font-size: 0.8rem;
+  }
+}

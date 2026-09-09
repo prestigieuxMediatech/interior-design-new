@@ -1,0 +1,289 @@
+/* ==========================================================================
+   MAGNETIC INTERIOR CONTACT SECTION STYLES
+   ========================================================================== */
+
+.contact-section {
+  width: 100%;
+  padding: 110px 5%;
+  background: #f8fafc;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.contact-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: flex-start;
+}
+
+/* --- LEFT SIDE --- */
+.contact-left-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.magnetic-title {
+  font-size: 4rem;
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: #0f172a;
+  margin-top: 0;
+  margin-bottom: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  overflow: hidden; /* Ensures smooth entry from right */
+  padding-bottom: 4px;
+}
+
+.letter-char {
+  display: inline-block;
+  will-change: transform, opacity, filter;
+}
+
+.space-char {
+  width: 0.3em;
+  display: inline-block;
+}
+
+.contact-description {
+  font-size: 1.08rem;
+  color: #475569;
+  line-height: 1.7;
+  margin-bottom: 40px;
+  max-width: 92%;
+  will-change: transform, opacity;
+}
+
+.contact-quick-info {
+  display: flex;
+  gap: 48px;
+  padding-top: 28px;
+  border-top: 1px solid #cbd5e1;
+  will-change: transform, opacity;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.info-label {
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: #94a3b8;
+  letter-spacing: 0.15em;
+}
+
+.info-value {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-top: 6px;
+}
+
+/* --- RIGHT SIDE: SLOW FADE FORM --- */
+.contact-right-form {
+  width: 100%;
+  will-change: transform, opacity, filter;
+}
+
+.open-luxury-form {
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.form-header {
+  margin-bottom: 6px;
+}
+
+.form-heading {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.form-subheading {
+  font-size: 0.88rem;
+  color: #64748b;
+  margin-top: 4px;
+}
+
+.form-group-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+
+.field-label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #1e293b;
+  letter-spacing: 0.02em;
+}
+
+.field-label .req {
+  color: #d97706;
+  margin-left: 2px;
+}
+
+/* UNDERLINE INPUT STYLE */
+.input-line-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.form-input-line {
+  width: 100%;
+  padding: 10px 0 12px 0;
+  font-size: 0.98rem;
+  color: #0f172a;
+  background: transparent;
+  border: none;
+  border-bottom: 1.5px solid #cbd5e1;
+  outline: none;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box;
+  font-family: inherit;
+  border-radius: 0;
+}
+
+.form-input-line::placeholder {
+  color: #94a3b8;
+  font-weight: 400;
+}
+
+/* Focus Border Accent Line */
+.focus-border {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #FFC107;
+  transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-input-line:focus ~ .focus-border {
+  width: 100%;
+}
+
+.form-textarea-line {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.form-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.char-count {
+  font-size: 0.78rem;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+.submit-btn {
+  background: #0f172a;
+  color: #ffffff;
+  border: none;
+  padding: 14px 32px;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 22px rgba(15, 23, 42, 0.15);
+}
+
+.submit-btn:hover {
+  background: #FFC107;
+  color: #0f172a;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px rgba(255, 193, 7, 0.35);
+}
+
+/* ==========================================================================
+   RESPONSIVE MEDIA QUERIES
+   ========================================================================== */
+
+@media (max-width: 1199px) {
+  .magnetic-title {
+    font-size: 3.4rem;
+  }
+  .contact-container {
+    gap: 50px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .contact-section {
+    padding: 80px 6%;
+  }
+  .contact-container {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+  .magnetic-title {
+    font-size: 3.2rem;
+  }
+  .contact-description {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .contact-section {
+    padding: 60px 5%;
+  }
+  .magnetic-title {
+    font-size: 2.4rem;
+  }
+  .form-group-row {
+    grid-template-columns: 1fr;
+  }
+  .contact-quick-info {
+    flex-direction: column;
+    gap: 18px;
+  }
+  .submit-btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .form-footer {
+    flex-direction: column-reverse;
+    gap: 14px;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 400px) {
+  .magnetic-title {
+    font-size: 1.95rem;
+  }
+  .form-heading {
+    font-size: 1.45rem;
+  }
+}

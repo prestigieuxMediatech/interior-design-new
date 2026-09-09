@@ -1,0 +1,415 @@
+/* ==========================================================================
+   Selected Projects — Editorial Showcase
+   ========================================================================== */
+
+.showcase {
+  --bg: #f9f6f0;
+  --surface: #fffdf8;
+  --ink: #0b2c24; /* Dark Teal color matching image 2 */
+  --stone: #2b2520;
+  --brass: #9c7530;
+  --line-strong: #0b2c24;
+  --shadow-soft: 0 30px 60px -30px rgba(34, 29, 23, 0.28);
+  --shadow-lift: 0 40px 80px -30px rgba(34, 29, 23, 0.34);
+
+  --font-heading-bold: var(--showcase-font-heading-bold), "Montserrat", "Plus Jakarta Sans", sans-serif;
+  --font-display: var(--showcase-font-display), "Fraunces", Georgia, serif;
+  --font-body: var(--showcase-font-body), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-slow: 1000ms;
+  --dur-med: 700ms;
+
+  position: relative;
+  background: var(--bg);
+  color: #111111;
+  font-family: var(--font-body);
+  padding: clamp(4rem, 8vw, 8rem) 0;
+  overflow: hidden;
+}
+
+.showcase * {
+  box-sizing: border-box;
+}
+
+.showcase__container {
+  width: 100%;
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 clamp(1.25rem, 5vw, 3.5rem);
+}
+
+/* --------------------------------------------------------------------- */
+/* Header & Magnetic Letter-by-Letter Right Entrance                     */
+/* --------------------------------------------------------------------- */
+
+.showcase__header {
+  width: 100%;
+  margin-bottom: clamp(3rem, 6vw, 5rem);
+}
+
+.showcase__header-top {
+  display: block;
+  width: 100%;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--line-strong);
+  margin-bottom: 2.5rem;
+  overflow: visible;
+}
+
+.showcase__main-heading {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0.5em;
+  font-family: var(--font-heading-bold);
+  font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin: 0;
+  line-height: 1.1;
+  width: 100%;
+  white-space: nowrap;
+  overflow: visible;
+}
+
+.showcase__word {
+  display: inline-flex;
+  white-space: nowrap;
+  overflow: visible;
+}
+
+.showcase__letter {
+  display: inline-block;
+  opacity: 0;
+  transform: translateX(100px) scale(0.85);
+  will-change: transform, opacity;
+  overflow: visible;
+}
+
+/* Magnetic entrance effect */
+.showcase__header.is-visible .showcase__letter {
+  animation: magneticRightSlide 900ms cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes magneticRightSlide {
+  0% {
+    opacity: 0;
+    transform: translateX(100px) scale(0.85);
+  }
+  70% {
+    opacity: 1;
+    transform: translateX(-8px) scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+/* Subtitle & Description — OUR PROJECTS entrance ke baad simple slide-up */
+.showcase__header-body {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 800ms var(--ease) 850ms, transform 800ms var(--ease) 850ms;
+}
+
+.showcase__header.is-visible .showcase__header-body {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.showcase__title-main {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(1.8rem, 3.8vw, 3rem);
+  line-height: 1.18;
+  letter-spacing: -0.01em;
+  margin: 0 0 1rem;
+  color: #111111;
+}
+
+.showcase__intro {
+  font-size: clamp(1rem, 1.2vw, 1.125rem);
+  line-height: 1.65;
+  color: #2b2520;
+  font-weight: 400;
+  max-width: 40rem;
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------- */
+/* Grid Layout                                                           */
+/* --------------------------------------------------------------------- */
+
+.showcase__grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-areas:
+    "feature feature feature feature feature feature feature feature second second second second"
+    "wide wide wide wide wide wide wide wide wide wide wide wide"
+    "duoA duoA duoA duoA duoA . duoB duoB duoB duoB duoB duoB"
+    ". . . close close close close close close . . .";
+  column-gap: clamp(1.25rem, 2.5vw, 2.5rem);
+  row-gap: clamp(3rem, 6vw, 5.5rem);
+}
+
+.showcase__project {
+  perspective: 1600px;
+  opacity: 0;
+  transform: translateY(34px);
+  transition: opacity var(--dur-slow) var(--ease), transform var(--dur-slow) var(--ease);
+}
+
+.showcase__project.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.showcase__project--feature { grid-area: feature; }
+.showcase__project--second { grid-area: second; align-self: end; }
+.showcase__project--wide { grid-area: wide; }
+.showcase__project--duoA { grid-area: duoA; }
+.showcase__project--duoB { grid-area: duoB; align-self: end; }
+.showcase__project--close { grid-area: close; }
+
+.showcase__link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  outline: none;
+}
+
+.showcase__link:focus-visible .showcase__frame {
+  outline: 2px solid var(--brass);
+  outline-offset: 4px;
+}
+
+/* --------------------------------------------------------------------- */
+/* Frame & Parallax                                                      */
+/* --------------------------------------------------------------------- */
+
+.showcase__frame {
+  position: relative;
+  overflow: hidden;
+  background: var(--surface);
+  box-shadow: var(--shadow-soft);
+  transform-style: preserve-3d;
+  transition: box-shadow var(--dur-med) var(--ease);
+  will-change: transform;
+}
+
+.showcase__project--feature .showcase__frame { aspect-ratio: 16 / 11; }
+.showcase__project--second .showcase__frame { aspect-ratio: 3 / 4; }
+.showcase__project--wide .showcase__frame { aspect-ratio: 21 / 8; }
+.showcase__project--duoA .showcase__frame,
+.showcase__project--duoB .showcase__frame { aspect-ratio: 4 / 5; }
+.showcase__project--close .showcase__frame {
+  aspect-ratio: 16 / 10;
+  max-width: 46rem;
+  margin: 0 auto;
+}
+
+.showcase__link:hover .showcase__frame {
+  box-shadow: var(--shadow-lift);
+}
+
+.showcase__parallax {
+  position: absolute;
+  inset: -6% 0;
+  height: 112%;
+  will-change: transform;
+}
+
+.showcase__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transform: scale(1.1);
+  filter: saturate(0.95) contrast(1.05);
+  transition: transform 1.3s var(--ease);
+}
+
+.showcase__project.is-visible .showcase__image { transform: scale(1); }
+.showcase__link:hover .showcase__image { transform: scale(1.055); }
+
+.showcase__veil {
+  position: absolute;
+  inset: 0;
+  background: var(--bg);
+  transform-origin: left center;
+  transform: scaleX(1);
+  transition: transform 950ms var(--ease) 120ms;
+}
+
+.showcase__project.is-visible .showcase__veil { transform: scaleX(0); }
+
+.showcase__scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(10, 8, 6, 0.88) 0%,
+    rgba(10, 8, 6, 0.45) 45%,
+    rgba(10, 8, 6, 0) 75%
+  );
+  pointer-events: none;
+}
+
+.showcase__corner {
+  position: absolute;
+  width: 1.4rem;
+  height: 1.4rem;
+  border: 1px solid rgba(248, 244, 234, 0.85);
+  opacity: 0;
+  transition: opacity var(--dur-med) ease 460ms;
+  pointer-events: none;
+}
+
+.showcase__project--second .showcase__corner,
+.showcase__project--duoA .showcase__corner,
+.showcase__project--duoB .showcase__corner {
+  border-color: rgba(34, 29, 23, 0.3);
+}
+
+.showcase__project.is-visible .showcase__corner { opacity: 1; }
+
+.showcase__corner--tl { top: 0.7rem; left: 0.7rem; border-right: none; border-bottom: none; }
+.showcase__corner--br { bottom: 0.7rem; right: 0.7rem; border-left: none; border-top: none; }
+
+/* --------------------------------------------------------------------- */
+/* Project Card Details Text                                             */
+/* --------------------------------------------------------------------- */
+
+.showcase__overlay-info {
+  position: absolute;
+  left: clamp(1.25rem, 3vw, 2.5rem);
+  right: clamp(1.25rem, 3vw, 2.5rem);
+  bottom: clamp(1.25rem, 3vw, 2.25rem);
+  color: #ffffff;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+.showcase__overlay-info .showcase__number {
+  color: #ffffff;
+  font-size: clamp(2rem, 3vw, 2.8rem);
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+
+.showcase__overlay-info .showcase__title {
+  color: #ffffff;
+  font-size: clamp(1.5rem, 2.2vw, 2rem);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.showcase__overlay-info .showcase__meta {
+  color: #f0f0f0;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.showcase__info {
+  display: flex;
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity var(--dur-slow) var(--ease) 260ms,
+    transform var(--dur-slow) var(--ease) 260ms;
+}
+
+.showcase__project.is-visible .showcase__info {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.showcase__project--wide .showcase__info { max-width: 34rem; }
+.showcase__info-text { min-width: 0; }
+
+.showcase__number {
+  display: block;
+  flex: none;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 600;
+  font-size: clamp(1.8rem, 2.6vw, 2.4rem);
+  color: #000000;
+  line-height: 1;
+}
+
+.showcase__title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.4rem, 2vw, 1.85rem);
+  line-height: 1.25;
+  color: #000000;
+  margin: 0 0 0.45rem;
+}
+
+.showcase__meta {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: #1a1714;
+  margin: 0 0 0.85rem;
+}
+
+.showcase__desc {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  font-weight: 500;
+  color: #111111;
+  max-width: 40ch;
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------- */
+/* Responsive Layout Adjustments                                         */
+/* --------------------------------------------------------------------- */
+
+@media (max-width: 991px) {
+  .showcase__grid {
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-areas:
+      "feature feature feature feature feature feature"
+      "second second second wide wide wide"
+      "duoA duoA duoA duoB duoB duoB"
+      "close close close close close close";
+  }
+}
+
+@media (max-width: 767px) {
+  .showcase__grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "feature"
+      "second"
+      "wide"
+      "duoA"
+      "duoB"
+      "close";
+    row-gap: 3rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .showcase__header,
+  .showcase__header-body,
+  .showcase__project,
+  .showcase__image,
+  .showcase__veil,
+  .showcase__corner,
+  .showcase__info,
+  .showcase__frame,
+  .showcase__parallax,
+  .showcase__letter {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}

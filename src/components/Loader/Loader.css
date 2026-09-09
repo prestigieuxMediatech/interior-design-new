@@ -1,0 +1,178 @@
+/* ==========================================================================
+   AMAR INTERIOR — Luxury Intro Loader CSS (Option 2)
+   ========================================================================== */
+
+.amar-loader {
+  --amar-bg: #fbfaf6;
+  --amar-dark: #16332c;
+  --amar-gold: #c8a24a;
+
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--amar-bg);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  opacity: 1;
+  transition: opacity 0.4s ease;
+  padding: 0 16px;
+}
+
+.amar-loader--fading {
+  opacity: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Centered Content
+   -------------------------------------------------------------------------- */
+
+.amar-loader__content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 100%;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.amar-loader--expanding .amar-loader__content,
+.amar-loader--fading .amar-loader__content {
+  opacity: 0;
+  transform: scale(0.94);
+}
+
+/* Spinner Ring */
+.amar-loader__ring {
+  position: relative;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.amar-loader__ring-svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+  animation: amar-loader-spin 1s linear infinite;
+}
+
+.amar-loader__ring-track {
+  fill: none;
+  stroke: rgba(200, 162, 74, 0.22);
+  stroke-width: 3;
+}
+
+.amar-loader__ring-progress {
+  fill: none;
+  stroke: var(--amar-gold);
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-dasharray: 70 220;
+}
+
+.amar-loader__dot {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--amar-dark);
+}
+
+/* Brand Text Styling */
+.amar-loader__brand {
+  margin: 0;
+  font-size: clamp(2rem, 7.5vw, 4.5rem);
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: var(--amar-dark);
+  text-align: center;
+  white-space: nowrap;
+  line-height: 1.1;
+  opacity: 0;
+  transform: translateY(8px);
+  animation: amar-loader-brand-in 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.amar-loader__brand-accent {
+  color: var(--amar-gold);
+  margin-left: 0.2em;
+}
+
+/* --------------------------------------------------------------------------
+   Slower & Smooth Expanding Golden Circle (1.1s via State Classes)
+   -------------------------------------------------------------------------- */
+
+.amar-loader__expand-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: var(--amar-gold);
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 1.1s cubic-bezier(0.22, 1, 0.36, 1);
+  z-index: 1;
+}
+
+.amar-loader--expanding .amar-loader__expand-circle,
+.amar-loader--fading .amar-loader__expand-circle {
+  transform: translate(-50%, -50%) scale(100);
+}
+
+/* Keyframes */
+@keyframes amar-loader-spin {
+  from {
+    transform: rotate(-90deg);
+  }
+  to {
+    transform: rotate(270deg);
+  }
+}
+
+@keyframes amar-loader-brand-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Media Queries */
+@media screen and (max-width: 480px) {
+  .amar-loader__ring {
+    width: 46px;
+    height: 46px;
+  }
+
+  .amar-loader__brand {
+    font-size: clamp(1.8rem, 7.5vw, 2.4rem);
+    letter-spacing: 0.06em;
+  }
+
+  .amar-loader__content {
+    gap: 16px;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 1024px) {
+  .amar-loader__brand {
+    font-size: clamp(2.5rem, 6.5vw, 3.8rem);
+  }
+
+  .amar-loader__ring {
+    width: 54px;
+    height: 54px;
+  }
+}

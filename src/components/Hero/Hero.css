@@ -1,0 +1,240 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Playfair+Display:wght@600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap");
+
+.hero {
+  position: relative;
+  width: 100vw;
+  max-width: 100%;
+  height: 100svh;
+  min-height: 600px;
+  overflow: hidden;
+  background-color: #000000;
+  color: #ffffff;
+}
+
+/* ---------- Media layer ---------- */
+.hero-media {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ---------- Content frame ---------- */
+.hero-frame {
+  position: relative;
+  z-index: 10;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2.8rem clamp(1.8rem, 6vw, 5rem);
+  box-sizing: border-box;
+}
+
+/* Spacer for top structure */
+.hero-topbar {
+  min-height: 1px;
+}
+
+/* Main content */
+.hero-content {
+  max-width: 900px;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+/* Pure Clean Gold Eyebrow */
+.hero-eyebrow {
+  font-family: "Cinzel", serif;
+  font-size: clamp(1.1rem, 2.2vw, 1.6rem);
+  font-weight: 800;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #d4af37;
+  background: linear-gradient(135deg, #ffd700 0%, #d4af37 60%, #aa820a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0 0 0.8rem 0;
+  display: inline-block;
+  filter: none;
+  text-shadow: none;
+}
+
+/* Headline */
+.hero-headline {
+  font-family: "Cinzel", "Playfair Display", serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: clamp(1.8rem, 3.8vw, 3.2rem);
+  line-height: 1.28;
+  color: #ffffff;
+  margin: 0 0 2rem 0;
+  max-width: 24ch;
+  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.6);
+}
+
+.hero-actions {
+  display: flex;
+}
+
+/* CTA Button */
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #ffd700 0%, #d4af37 100%);
+  color: #0d0d0d;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 4px;
+  border: 1px solid #ffe885;
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4), 0 4px 12px rgba(0, 0, 0, 0.5);
+  transition: all 0.35s ease;
+  cursor: pointer;
+}
+
+.hero-cta:hover {
+  background: linear-gradient(135deg, #ffe55c 0%, #e6be44 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(212, 175, 55, 0.6), 0 6px 15px rgba(0, 0, 0, 0.6);
+  color: #000000;
+}
+
+.hero-cta-icon {
+  transition: transform 0.3s ease;
+}
+
+.hero-cta:hover .hero-cta-icon {
+  transform: translateX(6px);
+}
+
+/* Bottom bar */
+.hero-bottombar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hero-sound {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.hero-sound:hover {
+  background: #d4af37;
+  border-color: #d4af37;
+  color: #000000;
+  transform: scale(1.05);
+}
+
+.hero-scroll {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.hero-scroll-line {
+  width: 2px;
+  height: 46px;
+  background: rgba(255, 255, 255, 0.4);
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px;
+}
+
+.hero-scroll-line i {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #d4af37;
+  box-shadow: 0 0 8px #d4af37;
+  animation: scrollPulse 2.2s ease-in-out infinite;
+}
+
+@keyframes scrollPulse {
+  0% {
+    top: -100%;
+  }
+  50% {
+    top: 0%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .hero-frame {
+    padding: 2rem 1.4rem;
+  }
+
+  .hero-headline {
+    max-width: 100%;
+  }
+
+  .hero-scroll span {
+    display: none;
+  }
+
+  .hero-scroll-line {
+    height: 36px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-cta {
+    padding: 0.9rem 1.5rem;
+    font-size: 0.82rem;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-sound {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-video {
+    animation: none;
+  }
+  .hero-scroll-line i {
+    animation: none;
+    top: 0;
+  }
+}

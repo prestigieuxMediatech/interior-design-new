@@ -1,0 +1,227 @@
+/* ==========================================================================
+   PARALLAX BANNER SECTION - EXTENDED & UPDATED STYLES
+   ========================================================================== */
+
+/* Main Container with Increased Height */
+.parallax-banner-section {
+  position: relative;
+  width: 100%;
+  height: 75vh;             /* Increased height for spacious feel */
+  min-height: 500px;
+  max-height: 800px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0f172a;
+}
+
+/* Parallax Background Engine */
+.parallax-bg-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.parallax-bg-image {
+  position: absolute;
+  top: -20%;
+  left: 0;
+  width: 100%;
+  height: 140%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  will-change: transform;
+}
+
+/* Floating Center Badge Positioned Perfectly */
+.banner-center-badge {
+  position: absolute;
+  top: 22%;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(15, 23, 42, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid #FFC107;
+  padding: 8px 22px;
+  border-radius: 40px;
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  pointer-events: none;
+}
+
+.badge-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #FFC107;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #FFC107;
+}
+
+/* Continuous Marquee Ticker Container */
+.ticker-wrapper {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  padding: 16px 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Glassmorphism Frosted Backdrop Strip for 100% Readability */
+.ticker-backdrop-blur {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.42);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: -1;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.ticker-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  will-change: transform;
+}
+
+.ticker-item {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding-right: 28px;
+}
+
+/* Reduced Font Size with High-Contrast Sharp Visibility */
+.high-vis-text {
+  font-size: 2.8rem;        /* Small, balanced & elegant font size */
+  font-weight: 800;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  color: #ffffff;
+  -webkit-text-stroke: 1px #0f172a;
+  filter: drop-shadow(0px 4px 12px rgba(0, 0, 0, 0.75));
+}
+
+.ticker-divider {
+  font-size: 1.5rem;
+  color: #FFC107;
+  filter: drop-shadow(0px 0px 8px rgba(255, 193, 7, 0.8));
+}
+
+/* ==========================================================================
+   COMPLETE RESPONSIVE MEDIA QUERIES (DESKTOP, TABLET, MOBILE)
+   ========================================================================== */
+
+/* 1. Large 2K & Desktop Screens (above 1440px) */
+@media (min-width: 1441px) {
+  .parallax-banner-section {
+    height: 80vh;
+    min-height: 550px;
+  }
+  .high-vis-text {
+    font-size: 3.2rem;
+  }
+}
+
+/* 2. Standard Laptops (1025px - 1440px) */
+@media (max-width: 1440px) and (min-width: 1025px) {
+  .parallax-banner-section {
+    height: 70vh;
+    min-height: 480px;
+  }
+  .high-vis-text {
+    font-size: 2.6rem;
+  }
+}
+
+/* 3. iPad Pro / Tablets Landscape (769px - 1024px) */
+@media (max-width: 1024px) {
+  .parallax-banner-section {
+    height: 60vh;
+    min-height: 400px;
+  }
+  .high-vis-text {
+    font-size: 2.2rem;
+  }
+  .banner-center-badge {
+    top: 18%;
+    font-size: 0.7rem;
+    padding: 7px 18px;
+  }
+}
+
+/* 4. Small Tablets & Big Phones (577px - 768px) */
+@media (max-width: 768px) {
+  .parallax-banner-section {
+    height: 55vh;
+    min-height: 350px;
+  }
+  .high-vis-text {
+    font-size: 1.8rem;
+  }
+  .ticker-item {
+    gap: 20px;
+    padding-right: 20px;
+  }
+  .ticker-divider {
+    font-size: 1.2rem;
+  }
+}
+
+/* 5. Modern Smartphones (iPhone 13/14/15/16, Androids - 426px to 576px) */
+@media (max-width: 576px) {
+  .parallax-banner-section {
+    height: 50vh;
+    min-height: 320px;
+  }
+  .high-vis-text {
+    font-size: 1.5rem;
+  }
+  .ticker-item {
+    gap: 16px;
+    padding-right: 16px;
+  }
+  .banner-center-badge {
+    top: 15%;
+    padding: 6px 14px;
+    font-size: 0.6rem;
+    letter-spacing: 0.16em;
+  }
+}
+
+/* 6. Compact / Compact Screen Mobile Devices (up to 425px) */
+@media (max-width: 425px) {
+  .parallax-banner-section {
+    height: 45vh;
+    min-height: 280px;
+  }
+  .high-vis-text {
+    font-size: 1.35rem;
+  }
+  .banner-center-badge {
+    top: 12%;
+    padding: 5px 12px;
+    font-size: 0.55rem;
+  }
+}
