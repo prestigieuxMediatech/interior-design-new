@@ -227,6 +227,12 @@ const portfolioData = {
         alt: "Study area with bookshelves",
       },
     ],
+    
+
+
+
+
+    
     philosophy: {
       heading: "Designing for Growth",
       paragraphs: [
