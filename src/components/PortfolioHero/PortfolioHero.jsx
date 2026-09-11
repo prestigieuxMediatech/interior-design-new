@@ -13,7 +13,7 @@ export default function PortfolioHero() {
 
   return (
     <section className="portfolio-hero">
-      <div className="hero-content">
+      <div className="portfolio-hero-content">
         <span className="badge-anim">Crafting Dream Spaces</span>
         <h1 className="hero-title">Inspirational Interior Designs</h1>
         <p className="hero-subtitle">

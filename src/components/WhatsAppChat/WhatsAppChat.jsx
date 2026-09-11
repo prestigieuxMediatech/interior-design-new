@@ -5,7 +5,7 @@ import Image from 'next/image';
 import './WhatsAppChat.css';
 
 // 1. Enter your real 10-digit phone number with country code (e.g. 91XXXXXXXXXX)
-const WHATSAPP_NUMBER = '919876543210'; 
+const WHATSAPP_NUMBER = '917400373699'; 
 
 // Extended Knowledge Base (18+ Comprehensive Interior Design Topics)
 const staticKnowledge = [
@@ -89,7 +89,7 @@ export default function WhatsAppChat({ isLoading = false }) {
   const [chatHistory, setChatHistory] = useState([
     {
       sender: 'bot',
-      text: '✨ Welcome to Amar Interior! How can we assist you with your space today?',
+      text: '✨ Welcome to Amar Interiors! How can we assist you with your space today?',
       time: 'Just now'
     }
   ]);
@@ -171,7 +171,7 @@ export default function WhatsAppChat({ isLoading = false }) {
               <span className="wa-online-badge"></span>
             </div>
             <div className="wa-user-info">
-              <h4>Amar Interior</h4>
+              <h4>AMAR INTERIORS</h4>
               <p>Design Assistant AI</p>
             </div>
           </div>

@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import "./ServicesHero.css";
+import { Feature } from "framer-motion";
 
 
 const slidesData = [
@@ -50,7 +51,7 @@ export default function ServicesHero() {
         preloadSlide(nextIndex);
         return nextIndex;
       });
-    }, 2200);
+    }, 2100);
 
     return () => {
       clearTimeout(preloadTimer);
@@ -103,3 +104,5 @@ export default function ServicesHero() {
   
   );
 }
+
+

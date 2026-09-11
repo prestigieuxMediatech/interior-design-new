@@ -5,7 +5,7 @@ import WhatsAppButton from "@/components/WhatsAppButton/WhatsAppButton";
 import WhatsAppChat from "@/components/WhatsAppChat/WhatsAppChat";
 
 export const metadata = {
-  title: "Decor & Design Interior | Luxury Interior Architecture",
+  title: "AMAR INTERIORS | LUXURY INTERIOR ARCHITECTURE",
   description: "Modern & Aesthetic Interior Design Solutions"
 };
 

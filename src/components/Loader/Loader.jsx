@@ -74,7 +74,7 @@ export default function Loader({ onFinish }) {
         </div>
 
         <p className="amar-loader__brand">
-          AMAR<span className="amar-loader__brand-accent">INTERIOR</span>
+          AMAR<span className="amar-loader__brand-accent">INTERIORS</span>
         </p>
       </div>
     </div>

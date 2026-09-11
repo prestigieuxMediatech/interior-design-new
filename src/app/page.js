@@ -14,12 +14,17 @@ export default function Home() {
     <main>
       <Loader />
       <Hero />
+       <AboutSection />
       <IntroSection />
-      <ServicesOverview />
+     
+      
       <ParallaxBanner />
-      <ContactSection />
-      <AboutSection />
+    
+      <ServicesOverview />
+     
+      
       <ProcessSection />
+         <ContactSection />
       <FaqSection />
       <GetInTouchSection />
       

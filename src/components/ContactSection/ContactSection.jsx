@@ -138,7 +138,7 @@ export default function ContactSection() {
           >
             <div className="info-item">
               <span className="info-label">STUDIO LOCATION</span>
-              <span className="info-value">Worli, Mumbai, Maharashtra</span>
+              <span className="info-value"> Shop no 8 plot no 180 Parvati enclave taloja phase 1, Mumbai- Maharashtra</span>
             </div>
             <div className="info-item">
               <span className="info-label">INQUIRIES</span>

@@ -22,7 +22,7 @@ export default function Navbar() {
   const pathname = usePathname();
   const router = useRouter();
 
-  // Scroll effect with initial check
+  // Scroll effect
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
@@ -38,13 +38,11 @@ export default function Navbar() {
     document.body.style.overflow = isOpen ? "hidden" : "unset";
   }, [isOpen]);
 
-  // Reset states on mobile menu close
   const handleCloseMenu = () => {
     setIsOpen(false);
     setPortfolioOpen(false);
   };
 
-  // Smart Handler for "Book Consultation" Button
   const handleBookConsultant = (e) => {
     e.preventDefault();
     handleCloseMenu();
@@ -62,12 +60,20 @@ export default function Navbar() {
   return (
     <header className={`navbar-header ${scrolled ? "scrolled" : ""}`}>
       <div className="navbar-container">
-        {/* Brand Logo */}
+        {/* Brand Logo & Side-by-Side Aligned Text */}
         <Link href="/" className="navbar-logo" onClick={handleCloseMenu}>
-          AMAR <span>INTERIOR</span>
+          <img
+            src="/nlogo.png"
+            alt="Amar Interior Logo"
+            className="navbar-brand-logo"
+          />
+          <span className="navbar-brand-text">
+            <span className="text-amar">AMAR</span>
+            <span className="text-interior">INTERIORS</span>
+          </span>
         </Link>
 
-        {/* Fullscreen Backdrop Blur for Mobile */}
+        {/* Mobile Backdrop */}
         <div
           className={`mobile-backdrop ${isOpen ? "active" : ""}`}
           onClick={handleCloseMenu}
@@ -76,49 +82,27 @@ export default function Navbar() {
         {/* Navigation Menu */}
         <nav>
           <ul className={`nav-links ${isOpen ? "active" : ""}`}>
-            {/* Home */}
-            <li
-              className={`nav-item ${pathname === "/" ? "active" : ""}`}
-              style={{ "--stagger": 1 }}
-            >
+            <li className={`nav-item ${pathname === "/" ? "active" : ""}`}>
               <Link href="/" className="nav-link" onClick={handleCloseMenu}>
                 Home
               </Link>
             </li>
 
-            {/* About Us */}
-            <li
-              className={`nav-item ${pathname === "/about" ? "active" : ""}`}
-              style={{ "--stagger": 2 }}
-            >
+            <li className={`nav-item ${pathname === "/about" ? "active" : ""}`}>
               <Link href="/about" className="nav-link" onClick={handleCloseMenu}>
                 About Us
               </Link>
             </li>
 
-            {/* Services */}
-            <li
-              className={`nav-item ${pathname === "/services" ? "active" : ""}`}
-              style={{ "--stagger": 3 }}
-            >
+            <li className={`nav-item ${pathname === "/services" ? "active" : ""}`}>
               <Link href="/services" className="nav-link" onClick={handleCloseMenu}>
                 Services
               </Link>
             </li>
 
-            {/* Portfolio with Dropdown */}
-            <li
-              className={`nav-item has-dropdown ${
-                pathname.startsWith("/portfolio") ? "active" : ""
-              }`}
-              style={{ "--stagger": 4 }}
-            >
+            <li className={`nav-item has-dropdown ${pathname.startsWith("/portfolio") ? "active" : ""}`}>
               <div className="portfolio-header-mobile">
-                <Link
-                  href="/portfolio"
-                  className="nav-link"
-                  onClick={handleCloseMenu}
-                >
+                <Link href="/portfolio" className="nav-link" onClick={handleCloseMenu}>
                   Portfolio
                 </Link>
                 <button
@@ -127,27 +111,16 @@ export default function Navbar() {
                   aria-label="Toggle Portfolio Submenu"
                   type="button"
                 >
-                  {portfolioOpen ? (
-                    <ChevronUp size={18} />
-                  ) : (
-                    <ChevronDown size={18} />
-                  )}
+                  {portfolioOpen ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
                 </button>
               </div>
 
-              {/* Submenu Dropdown */}
-              <ul
-                className={`dropdown-menu ${
-                  portfolioOpen ? "mobile-expanded" : ""
-                }`}
-              >
+              <ul className={`dropdown-menu ${portfolioOpen ? "mobile-expanded" : ""}`}>
                 {portfolioItems.map((subItem) => (
                   <li key={subItem.label} className="dropdown-item">
                     <Link
                       href={subItem.href}
-                      className={`dropdown-link ${
-                        pathname === subItem.href ? "sub-active" : ""
-                      }`}
+                      className={`dropdown-link ${pathname === subItem.href ? "sub-active" : ""}`}
                       onClick={handleCloseMenu}
                     >
                       {subItem.label}
@@ -157,18 +130,13 @@ export default function Navbar() {
               </ul>
             </li>
 
-            {/* Contact Us */}
-            <li
-              className={`nav-item ${pathname === "/contact" ? "active" : ""}`}
-              style={{ "--stagger": 5 }}
-            >
+            <li className={`nav-item ${pathname === "/contact" ? "active" : ""}`}>
               <Link href="/contact" className="nav-link" onClick={handleCloseMenu}>
                 Contact
               </Link>
             </li>
 
-            {/* Action Button */}
-            <li className="nav-action" style={{ "--stagger": 6 }}>
+            <li className="nav-action">
               <button
                 className="consultation-btn"
                 onClick={handleBookConsultant}
@@ -180,7 +148,7 @@ export default function Navbar() {
           </ul>
         </nav>
 
-        {/* Dynamic Hamburger / Cross Toggle Button */}
+        {/* Hamburger Toggle Button */}
         <button
           className="hamburger-btn"
           onClick={() => setIsOpen(!isOpen)}
@@ -198,7 +166,6 @@ export default function Navbar() {
     </header>
   );
 }
-
 
 
 

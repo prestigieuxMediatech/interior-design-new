@@ -13,7 +13,7 @@ export default function Footer() {
           {/* Column 1: Brand, Description & CTA Button */}
           <div className="amar-footer__col amar-footer__col--brand">
             <Link href="/" className="amar-footer__logo" aria-label="AMAR INTERIOR Home">
-              AMAR <span className="amar-footer__logo-accent">INTERIOR</span>
+              AMAR <span className="amar-footer__logo-accent">INTERIORS</span>
             </Link>
             <p className="amar-footer__statement">
               Thoughtfully designed spaces,<br />
@@ -42,7 +42,7 @@ export default function Footer() {
           <div className="amar-footer__col">
             <h3 className="amar-footer__heading">CONTACT</h3>
             <address className="amar-footer__address">
-              <p className="amar-footer__address-line">Mumbai, India</p>
+              <p className="amar-footer__address-line">Shop no 8 plot no 180 Parvati enclave taloja phase 1, Mumbai- Maharashtra</p>
               <p className="amar-footer__address-line">
                 <a href="tel:+919876543210" className="amar-footer__link">
                   +91 7400373699
@@ -137,7 +137,7 @@ export default function Footer() {
         {/* BOTTOM LEGAL BAR */}
         <div className="amar-footer__bottom">
           <p className="amar-footer__copyright">
-            &copy; 2026 AMAR INTERIOR. All Rights Reserved.
+            &copy; 2026 AMAR INTERIORS. All Rights Reserved.
           </p>
           <div className="amar-footer__legal-links">
             <Link href="/privacy-policy" className="amar-footer__legal-link">Privacy Policy</Link>
