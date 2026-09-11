@@ -207,23 +207,23 @@ const portfolioData = {
       "Furniture a child outgrows in a year is a design failure, not a phase.",
     sliderImages: [
       {
-        src: "/public/Kids_Bedroom/KB-1.jpeg",
+        src: "/Master_Bedroom/KB-1.jpeg",
         alt: "Bunk bed and desk unit",
       },
       {
-        src: "./Kids_bedroom/KB-2.jpeg",
+        src: "/Master_Bedroom/KB-2.jpeg",
         alt: "Study area with bookshelves",
       },
       {
-        src: "./Kids_bedroom/KB-4.jpeg",
+        src: "/Master_Bedroom/KB-4.jpeg",
         alt: "Study area with bookshelves",
       },
       {
-        src: "./Kids_bedroom/KB-6.jpeg",
+        src: "/Master_Bedroom/KB-6.jpeg",
         alt: "Study area with bookshelves",
       },
       {
-        src: "./Kids_bedroom/KB-5.jpeg",
+        src: "/Master_Bedroom/KB-5.jpeg",
         alt: "Study area with bookshelves",
       },
     ],
