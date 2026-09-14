@@ -9,7 +9,7 @@ export default function WhatsAppButton() {
   // Client's WhatsApp number & Pre-filled Message
   const phoneNumber = "917400373699"; 
   const message = encodeURIComponent(
-    "Hello Decor & Design Studio! I am interested in discussing a luxury interior project."
+    "Hello AMAR INTERIOR Studio! I am interested in discussing a luxury interior project."
   );
 
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
